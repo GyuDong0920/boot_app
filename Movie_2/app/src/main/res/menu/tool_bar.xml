@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/coffeeIcon"
+        android:icon="@drawable/ic_baseline_coffee_24"
+        android:title="coffee"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/temperture"
+        android:icon="@drawable/ic_baseline_ac_unit_24"
+        android:title="C"
+        app:showAsAction="ifRoom" />
+</menu>
