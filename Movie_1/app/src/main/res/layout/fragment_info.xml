@@ -6,10 +6,10 @@
     tools:context=".InfoFragment"
     android:layout_gravity="center">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <WebView
+
+        android:id="@+id/mWebView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="INFO Fragment" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

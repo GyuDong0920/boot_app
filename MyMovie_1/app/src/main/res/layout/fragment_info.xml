@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".InfoFragment">
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <ImageView-->
+<!--            android:id="@+id/infoImgView"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:background="@color/purple_200"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="100dp"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/userNameTextView"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/infoImgView"-->
+<!--            app:layout_constraintStart_toStartOf="@id/infoImgView"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/infoImgView"-->
+<!--            android:text="UserName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--        <LinearLayout-->
+
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/infoImgView"-->
+<!--            app:layout_constraintStart_toStartOf="@id/infoImgView"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/userNameTextView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <ImageView-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:background="@color/teal_200"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:text="dsadsadasdadasdas" />-->
+
+<!--        </LinearLayout>-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:layout_height="wrap_content"/>
+
+</FrameLayout>

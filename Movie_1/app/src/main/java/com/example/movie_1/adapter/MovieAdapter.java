@@ -2,6 +2,7 @@ package com.example.movie_1.adapter;
 
 // 내부 클래스 먼저 만들기
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.movie_1.R;
+import com.example.movie_1.interfaces.OnMovieItemClicked;
 import com.example.movie_1.models.Movie;
 
 import java.util.ArrayList;
@@ -25,11 +27,16 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     private List<Movie> list = new ArrayList<>();
 
+    private OnMovieItemClicked onMovieItemClicked;
+
     // 통신 배우기 전 생성자에서 데이터를 전달 받아서 화면을 구성
     // 통신이기 때문에 화면을 그리는 시점보다 더 늦게 데이터가 도달할 수 있다.
 
-    public void addItemList(List<Movie> list) {
-        this.list = list;
+    public void setOnMovieItemClicked(OnMovieItemClicked onMovieItemClicked) {
+        this.onMovieItemClicked = onMovieItemClicked;
+    }
+    public void addItem(List<Movie> addList){
+        this.list.addAll(list.size(), addList);
         notifyDataSetChanged();
     }
 
@@ -45,6 +52,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Movie movie = list.get(position);
         holder.setItem(movie);
+        holder.itemView.setOnClickListener(view -> {
+            onMovieItemClicked.selectedItem(movie);
+        });
     }
 
     @Override
@@ -84,6 +94,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
                     .placeholder(R.drawable.round_image)
                     .transform(new FitCenter(), new RoundedCorners(20))
                     .into(posterIv);
+
         }
 
     } // end of inner class
