@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logInContainer"
+        android:layout_width="360dp"
+        android:layout_height="480dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/logineditbackground"
+        app:layout_constraintBottom_toTopOf="@id/signInContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="@id/loginTitle"
+            app:layout_constraintEnd_toStartOf="@id/loginTitle"
+            app:layout_constraintStart_toStartOf="@id/logInIdEditTextView"
+            app:layout_constraintTop_toTopOf="@id/loginTitle" />
+
+        <ImageView
+            android:id="@+id/loginTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:src="@drawable/title1"
+            android:text="Instagram"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@id/logInIdEditTextView"
+            app:layout_constraintEnd_toEndOf="@id/logInContainer"
+            app:layout_constraintTop_toTopOf="@id/logInContainer" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/logInIdEditTextView"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:gravity="start|center"
+            android:hint="전화번호, 사용자 이름 또는 이메일"
+            app:layout_constraintBottom_toTopOf="@id/logInPwEditTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/logInPwEditTextView"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:gravity="start|center"
+            android:hint="비밀번호"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="@id/logInIdEditTextView"
+            app:layout_constraintStart_toStartOf="@id/logInIdEditTextView"
+            app:layout_constraintTop_toBottomOf="@id/logInIdEditTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/loginButton"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/loginbuttonbackground"
+            android:gravity="center"
+            android:text="로그인"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/logInPwEditTextView"
+            app:layout_constraintStart_toStartOf="@id/logInPwEditTextView"
+            app:layout_constraintTop_toBottomOf="@id/logInPwEditTextView" />
+
+        <TextView
+            android:id="@+id/orTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text=" ───────   또는   ───────"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginButton"></TextView>
+
+        <ImageView
+            android:id="@+id/faceBookLogIn"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/facebooklogin"
+            app:layout_constraintBottom_toTopOf="@id/forgetPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/orTextView" />
+
+        <TextView
+            android:id="@+id/forgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호를 잊으셨나요?"
+            android:textColor="#5C6FD6"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/faceBookLogIn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signInContainer"
+        android:layout_width="360dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/logineditbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/logInContainer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/logInContainer"
+        app:layout_constraintTop_toBottomOf="@id/logInContainer">
+<TextView
+    android:id="@+id/noId"
+    android:textSize="15dp"
+    android:layout_marginStart="85dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="계정이 없으신가요?"
+    app:layout_constraintEnd_toStartOf="@id/signTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="@color/skyblue"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/noId"
+            android:text="가입하기"
+            android:id="@+id/signTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

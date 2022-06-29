@@ -31,7 +31,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHorder
         this.onMovieItemClicked = onMovieItemClicked;
     }
     // 통신 배우기 전에는 생성자에서 데이터를 전달 받아서 화면을 구성했다면
-    // 지금은 네이트워크 통신이기 때문에 화면을 그리는 시점 보다 더 늦게 데이터가 도달 할수 있다.
+    // 지금은 네트워크 통신이기 때문에 화면을 그리는 시점 보다 더 늦게 데이터가 도달 할수 있다.
 
     public void initItemList(List<Movie> list){
         this.list = list;

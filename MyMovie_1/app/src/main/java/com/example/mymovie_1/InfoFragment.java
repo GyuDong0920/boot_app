@@ -33,10 +33,12 @@ public class InfoFragment extends Fragment {
 
     public void setOnPassWebview(OnPassWebview onPassWebview) {
         this.onPassWebview = onPassWebview;
+
     }
 
     public InfoFragment(OnchangeToolBarTitle onchangeToolBarTitle) {
         this.onchangeToolBarTitle = onchangeToolBarTitle;
+
     }
 
     public static InfoFragment getInstance(OnchangeToolBarTitle onchangeToolBarTitle) {

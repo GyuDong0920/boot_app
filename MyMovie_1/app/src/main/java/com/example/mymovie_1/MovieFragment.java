@@ -58,12 +58,8 @@ public class MovieFragment extends Fragment implements OnMovieItemClicked{
         this.onchangeToolBarTitle = onchangeToolBarTitle;
     }
 
-
-
-
-
     // 생성자를 통해서 callBack 보내는 방법
-    public MovieFragment(OnchangeToolBarTitle onchangeToolBarTitle) {
+    private MovieFragment(OnchangeToolBarTitle onchangeToolBarTitle) {
         this.onchangeToolBarTitle = onchangeToolBarTitle;
     }
 
@@ -167,13 +163,13 @@ public class MovieFragment extends Fragment implements OnMovieItemClicked{
         binding.movieRecyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if (scrollEvent) {
-                    LinearLayoutManager layoutManager = ((LinearLayoutManager) binding.movieRecyclerView.getLayoutManager());
-                    int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
-                    Log.d(TAG, lastVisibleItemPosition + "@");
-                    // adapter (데이터) list.size 로 뽑아올수있다
-                    // 리니어 레이아웃은 인덱스 번호로 9를 뽑아 오기 때문에 -1을 붙여줘야한다
-                    int itemTotalCount = binding.movieRecyclerView.getAdapter().getItemCount() - 1;
+                        if (scrollEvent) {
+                            LinearLayoutManager layoutManager = ((LinearLayoutManager) binding.movieRecyclerView.getLayoutManager());
+                            int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
+                            Log.d(TAG, lastVisibleItemPosition + "@");
+                            // adapter (데이터) list.size 로 뽑아올수있다
+                            // 리니어 레이아웃은 인덱스 번호로 9를 뽑아 오기 때문에 -1을 붙여줘야한다
+                            int itemTotalCount = binding.movieRecyclerView.getAdapter().getItemCount() - 1;
                     if (lastVisibleItemPosition == itemTotalCount) {
                         if (currentPageNumber != 1) {
                             // 난중에 네트워크를 요청할껀데 이벤트가 계속 발생하면 네트워크 오류가 발생할수도있다!.
